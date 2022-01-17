@@ -16,9 +16,9 @@ window.addEventListener('mousemove', function(event){
 });
 
 ctx.fillStyle = 'teal';
-ctx.font = '60px Verdana';
-ctx.fillText('SVG', 35, 70);
-// ctx.strokeRect(0,0,100,100);
+ctx.font = '30px Verdana';
+ctx.fillText('MOUSE', 45, 40);
+ctx.fillText('ANIMATION', 10, 70);
 const textCoordinates = ctx.getImageData(0,0, canvas.width, canvas.height);
 
 class particle{
@@ -65,11 +65,6 @@ class particle{
 console.log(textCoordinates);
 function init(){
     particleArray = [];
-    // for(let i=0; i<500; i++){
-    //     let x = Math.random()* canvas.width;
-    //     let y = Math.random()* canvas.height;
-    //     particleArray.push(new particle(x,y));
-    // }
     for(let y =0, y2= textCoordinates.height;y < y2; y++){
         for(let x =0, x2 = textCoordinates.width; x<x2;x++){
             if(textCoordinates.data[(y * 4 * textCoordinates.width)+(x*4)+3]>128){

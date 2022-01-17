@@ -23,9 +23,7 @@ function isElementUnderBottom(elem, triggerDiff) {
   window.addEventListener('scroll', handleScroll);
 
 // bllearn section
-function random(min, max) { //min~max 범위
-  //toFixed()를 통해 반환된 문자 데이터를,
-  //parseFloat()을 통해 소수점을 가지는 숫자 데이터로 변환
+function random(min, max) {
   return parseFloat((Math.random() * (max - min) + min).toFixed(2))
 }
 
@@ -43,31 +41,32 @@ function floating(item, delayAfter, size) {
     );
 }
 
-floating('.con', .2, 60)
+floating('.con', .2, 30)
 
 // menu
 const m1 = document.querySelector('.m1');
 const m2 = document.querySelector('.m2');
 const m3 = document.querySelector('.m3');
 const m4 = document.querySelector('.m4');
-const bllearnTop = document.querySelector('#bllearn_sec').offsetTop;
 const designTop = document.querySelector('#design_sec').offsetTop;
 const turtleTop = document.querySelector('#turtle_sec').offsetTop;
+const svgTop = document.querySelector('#svg_sec').offsetTop;
+const bllearnTop = document.querySelector('#bllearn_sec').offsetTop;
 
-m1.addEventListener("click",svgHandle);
-m2.addEventListener("click",bllearnHandle);
-m3.addEventListener("click",designHandle);
-m4.addEventListener("click",turtleHandle);
+m1.addEventListener("click",designHandle);
+m2.addEventListener("click",turtleHandle);
+m3.addEventListener("click",svgHandle);
+m4.addEventListener("click",bllearnHandle);
 
-function svgHandle(){
-  window.scrollTo({top:0, behavior:"smooth"});
-}
-function bllearnHandle(){
-  window.scrollTo({top:bllearnTop, behavior:"smooth"});
-}
 function designHandle(){
   window.scrollTo({top:designTop, behavior:"smooth"});
 }
 function turtleHandle(){
   window.scrollTo({top:turtleTop, behavior:"smooth"});
+}
+function svgHandle(){
+  window.scrollTo({top:svgTop, behavior:"smooth"});
+}
+function bllearnHandle(){
+  window.scrollTo({top:bllearnTop, behavior:"smooth"});
 }
