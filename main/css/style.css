@@ -5,7 +5,7 @@ a{text-decoration: none;}
 canvas{background: #000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 body{overflow-x: hidden;background: #00000088;}
 body::-webkit-scrollbar {display: none;}
-section{width: 100vw;height:100vh;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+section{width: 100vw;height:100vh;display: flex;flex-direction: column;justify-content: center;align-items: center;overflow: hidden;}
 .inner{width:1200px;}
 h2{font-size: 5rem;letter-spacing: -0.8px;color:#fff;line-height: 70px;}
 p{font-size: 24px;color:#fff;}
@@ -22,7 +22,7 @@ p{font-size: 24px;color:#fff;}
 .menu_wrap:hover ul{height: 150px;}
 .menu_wrap ul li:hover{color: #004078;}
 /* button */
-.btn{width: 120px;height:45px;background: #2a72b1;border-radius: 5px;margin-top: 20px;position: relative;border: 1px solid #004078;box-shadow: 5px 3px 0 #00509676;}
+.btn{width: 120px;height:45px;background: #2a72b1;border-radius: 5px;margin-top: 20px;position: relative;border: 1px solid #004078;box-shadow: 5px 3px 0 #00509676;z-index: 99;}
 .btn._more{position: absolute;top: -30px;left: -1px;color:#005096;background: #95bde0;text-align: center;line-height: 43px;font-weight: 400;transition-duration: 0.1s;box-shadow: none;}
 .btn._more:hover{top: -27px;}
 .btn._more:active{top: -21px;}
@@ -82,6 +82,7 @@ p{font-size: 24px;color:#fff;}
 #svg_sec .svg img{transition-duration: 0.3s;position: absolute;}
 #svg_sec .svg._1 img{height: 50%;top: 30%;left: -130%;}
 #svg_sec .svg._2 img{top: 0;left: -270%;}
+#svg_sec .svg._3 img{left: -190%;height: 100%;}
 #svg_sec .svg._4 img{top: 0;right: -50%;}
 #svg_sec .svg:hover img{transform: scale(1.1);}
 
@@ -98,12 +99,8 @@ p{font-size: 24px;color:#fff;}
 #bllearn_sec .con.pc{margin-top: 150px;}
 #bllearn_sec .con.mobile{display: none;}
 /* footer */
-footer{width: 100vw;background: #000;min-height: 100px;color: #fff;padding: 20px 50px;}
-
-@media all and (max-width:1200px) {
-  .inner{width: 95%;}
-}
-/* sub */
+footer{background: #000;min-height: 100px;color: #fff;padding: 20px 50px;}
+/* ------------sub------------ */
 /* svg animation */
 #svg_animation{background: linear-gradient(45deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);}
 #svg_animation .inner{position: relative;height: 100%;}
@@ -119,4 +116,41 @@ footer{width: 100vw;background: #000;min-height: 100px;color: #fff;padding: 20px
 }
 /* float */
 #float_sec #canvas{background:linear-gradient(180deg, #020024 30%, #0e0038 50%, #010016 70%);}
+/* blob */
+#blob_sec{background: linear-gradient(77deg, rgba(216,255,205,1) 15%, rgba(157,150,255,1) 100%);}
+#blob_sec .inner{display: flex;justify-content: center;align-items: center;height: 100%;}
+#blob_sec svg{height: 100%;filter: drop-shadow(0 0 30px rgba(68, 193, 255, 0.299));}
 
+/* ------------MEDIA------------ */
+@media all and (max-width:1200px) {
+  .inner{width: 95%;flex-direction: column;}
+  .title_wrap{display: flex;justify-content: center;align-items: center;flex-direction: column;margin: 50px 0 30px;}
+  #svg_sec .title_wrap{margin-right: 0;}
+  h2{font-size:3rem;}
+  #turtle_sec .bg_wrap{height: 100%;}
+  #turtle_sec .inner{justify-content: space-around;}
+  #svg_sec .wrap{flex-direction: column;width: 120%;}
+  #svg_sec .svg{width: 100%;height: 150px;}
+  #svg_sec .svg._1 img{width: 70%;top:0;left:13%;height: auto;}
+  #svg_sec .svg._2 img{width: 100%;top: -5%;left: 0;}
+  #svg_sec .svg._3 img{left: 0;width: 100%;}
+  #svg_sec .svg._4 img{width: 100%;top: 0;left: 0;}
+  #bllearn_sec .inner{justify-content: center;}
+  #bllearn_sec .blur{height: 90vh;top: 5vh;}
+  #bllearn_sec .c._1{width: 300px;height: 300px;top:-10%;left: -20%;}
+  #bllearn_sec .c._2{width: 500px;height: 500px;top: 5%;left: -10%;bottom: auto;}
+  #bllearn_sec .blur .c._1{top: -15%;left: -25%;}
+  #bllearn_sec .blur .c._2{top: 3%;left: -15%;}
+  #bllearn_sec .inner{height: 100%;}
+  #bllearn_sec .con.pc{display: none;}
+  #bllearn_sec .con.mobile{display: block;height: 70%;margin-left: 70px;padding-bottom: 50px;}
+  #bllearn_sec .con.mobile img{height: 100%;}
+}
+@media all and (max-width:850px) {
+  #turtle_sec .bg_wrap{width: 100%;}
+
+}
+@media all and (max-width:500px) {
+  #turtle_sec .bg_wrap{height: 60%;}
+
+}
