@@ -1,7 +1,7 @@
 /* common */
 *{margin: 0;padding:0;}
 ul,li{list-style:none;}
-a{text-decoration: none;}
+a{text-decoration: none;float:left;}
 canvas{background: #000;position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 body{overflow-x: hidden;background: #00000088;}
 body::-webkit-scrollbar {display: none;}
@@ -31,9 +31,11 @@ p{font-size: 24px;color:#fff;}
 #bllearn_sec .btn{background: #9956ff;border: 1px solid #6600ff;color:#5100ca;box-shadow: 5px 3px #5400d361;}
 #bllearn_sec .btn._more{background: #d2b8fa;box-shadow: none;}
 /* design system */
-#design_sec{position: relative;background: url(../img/system_design_bg1.png) 0 0 no-repeat;background-size: cover;}
-#design_sec svg{position: absolute;top: 0;left: 0;height: 100%;}
-#design_sec h2{margin-bottom: 40px;}
+#design_sec{background: #01507b;overflow: hidden;}
+#design_sec img{position: absolute;top: 0;right: 0;height: 100%;}
+#design_sec .inner{z-index: 9;}
+#design_sec p{color: #fff;}
+#design_sec h2{margin-bottom: 40px;color: #000;}
  /* TTDD */
 #turtle_sec{background-color: #b3d1a9;}
 #turtle_sec .inner{display: flex;justify-content: space-between;align-items: center;height: 100%;}
@@ -146,11 +148,12 @@ footer{background: #000;min-height: 100px;color: #fff;padding: 20px 50px;}
   #bllearn_sec .con.mobile{display: block;height: 70%;margin-left: 70px;padding-bottom: 50px;}
   #bllearn_sec .con.mobile img{height: 100%;}
 }
+@media all and (max-width:1000px) {
+  #design_sec p,#design_sec h2{background: rgba(255, 255, 255, 0.7);color:#000;}
+}
 @media all and (max-width:850px) {
   #turtle_sec .bg_wrap{width: 100%;}
-
 }
 @media all and (max-width:500px) {
   #turtle_sec .bg_wrap{height: 60%;}
-
 }
